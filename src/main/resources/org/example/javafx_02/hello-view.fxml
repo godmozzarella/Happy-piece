@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.javafx_02.HelloController">
+    <Canvas fx:id="canvas" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+    <ColorPicker fx:id="color" layoutX="353.0" layoutY="10.0" AnchorPane.leftAnchor="350.0" AnchorPane.topAnchor="10.0" />
+    <ComboBox fx:id="shape" layoutX="10.0" layoutY="10.0" prefWidth="150.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+    <Slider fx:id="sizeSlider" layoutX="180.0" layoutY="4.0" max="200" min="10" prefWidth="150.0" showTickLabels="true" showTickMarks="true" value="50" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="4.0" />
+   <Label fx:id="cursor_xy" layoutX="10.0" layoutY="578.0" text="Label" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" />
+</AnchorPane>
