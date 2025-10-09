@@ -12,7 +12,7 @@
 
 Скриншот рабочего окна приложения: If the software has visual components, place a screenshot after the description; e.g.,
 
-![](https://raw.githubusercontent.com/cfpb/open-source-project-template/main/screenshot.png)
+![](screenshots/view.png)
 
 ## Архитектура
 Поместите диаграмму компонентов/классов модели
