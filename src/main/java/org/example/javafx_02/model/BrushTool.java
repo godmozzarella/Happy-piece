@@ -4,6 +4,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import java.util.List;
+import java.util.Stack;
 
 public class BrushTool {
     private final List<DrawShape> shapes;

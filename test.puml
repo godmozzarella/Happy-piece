@@ -1,0 +1,94 @@
+@startuml
+class org.example.javafx_02.model.BrushTool {
+- List<DrawShape> shapes
+- GraphicsContext gc
+- boolean drawing
+- String currentShapeType
+- double currentSize
+- Color currentColor
++ void startDrawing(MouseEvent,String,double,Color)
++ void draw(MouseEvent)
++ void stopDrawing()
+- void addShape(double,double)
+}
+
+
+abstract class org.example.javafx_02.model.DrawShape {
+# double x
+# double y
+# double size
+# Color color
++ {abstract}void draw(GraphicsContext)
++ double getX()
++ void setX(double)
++ double getY()
++ void setY(double)
++ double getSize()
++ void setSize(double)
++ Color getColor()
++ void setColor(Color)
++ String grouped()
++ {static} DrawShape ungrouped(String)
++ {static} void saveShapesToFile(List<DrawShape>,File)
++ {static} List<DrawShape> loadShapesFromFile(File)
+}
+
+
+class org.example.javafx_02.Factorio.FactorioShape {
++ {static} DrawShape createShape(String,double,double,double,Color)
+}
+
+class org.example.javafx_02.model.Circle {
++ void draw(GraphicsContext)
+}
+
+class org.example.javafx_02.HelloController {
+- Canvas canvas
+- ColorPicker color
+- ComboBox<String> shape
+- Slider sizeSlider
+- Label cursor_xy
+- List<DrawShape> shapes
+- BrushTool brushTool
+- EraserTool eraserTool
+- boolean eraserMode
++ void initialize()
+- void onSaveClick()
+- void onLoadClick()
+- void redraw(GraphicsContext)
+- void removeShapeAt(double,double)
+}
+
+
+class org.example.javafx_02.HelloApplication {
++ void start(Stage)
+}
+
+class org.example.javafx_02.model.EraserTool {
+- List<DrawShape> shapes
+- GraphicsContext gc
+- boolean erasing
+- String currentShapeType
+- double currentSize
++ void startErasing(MouseEvent,String,double)
++ void erase(MouseEvent)
++ void stopErasing()
+- void eraseAt(double,double)
+}
+
+
+class org.example.javafx_02.model.Triangle {
++ void draw(GraphicsContext)
+}
+
+class org.example.javafx_02.model.Square {
++ void draw(GraphicsContext)
+}
+
+
+
+org.example.javafx_02.model.DrawShape <|-- org.example.javafx_02.model.Circle
+javafx.application.Application <|-- org.example.javafx_02.HelloApplication
+org.example.javafx_02.model.DrawShape <|-- org.example.javafx_02.model.Triangle
+org.example.javafx_02.model.DrawShape <|-- org.example.javafx_02.model.Square
+@enduml
